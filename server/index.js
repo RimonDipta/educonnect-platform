@@ -18,8 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/questions', require('./routes/questionRoutes'));
+const authRoutes = require('./routes/authRoutes');
+const questionRoutes = require('./routes/questionRoutes');
+const chatRoutes = require('./routes/chatRoutes');
+const messageRoutes = require('./routes/messageRoutes');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 // Socket.IO Setup
 const io = initializeSocket(server);
@@ -37,7 +40,17 @@ app.get('/', (req, res) => {
   res.send('EduConnect Server is running');
 });
 
+app.use('/api/auth', authRoutes);
+app.use('/api/questions', questionRoutes);
+app.use('/api/chats', chatRoutes);
+app.use('/api/messages', messageRoutes);
+
+// Error Handling Middlewares
+app.use(notFound);
+app.use(errorHandler);
+
 const PORT = process.env.PORT || 5000;
+
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

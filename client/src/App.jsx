@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import Register from './pages/auth/Register';
 
 // Placeholder Pages
 const Home = () => (
@@ -17,9 +18,6 @@ const Home = () => (
 
 const Login = () => (
   <div className="text-center text-2xl">Login Page (Coming Soon)</div>
-);
-const Register = () => (
-  <div className="text-center text-2xl">Register Page (Coming Soon)</div>
 );
 const Dashboard = () => (
   <div className="text-center text-2xl">Dashboard (Protected)</div>

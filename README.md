@@ -1,56 +1,70 @@
-# 🎓 EduConnect
+# EduConnect Platform
 
-<div align="center">
+EduConnect is a real-time academic collaboration platform designed to bridge the gap between students, bridging knowledge exchange through Q&A, instant messaging, and resource sharing.
 
-> **🚧 THIS PROJECT IS CURRENTLY UNDER CONSTRUCTION 🚧**
->
-> _We are actively building the future of academic collaboration._
+## 🚀 Features
 
-</div>
+- **User Authentication**: Secure registration and login with JWT and bcrypt.
+- **Role-Based Access**: Automatic role assignment (Junior/Senior) based on academic level.
+- **Q&A System**: Post questions, filter by subjects, and get urgent help.
+- **Real-time Chat**: Instant 1-on-1 messaging powered by Socket.IO.
+- **Modern UI**: Responsive frontend built with React, Vite, and Tailwind CSS (planned).
 
-## 📖 About
+## 🛠️ Technology Stack
 
-**EduConnect** is a real-time academic collaboration platform designed to bridge the gap between Junior students (School/College) and Senior mentors (University).
+### Backend
 
-👉 **[Explore Full Project Features](./ProjectFeat.md)**
+- **Node.js & Express**: High-performance API server.
+- **MongoDB & Mongoose**: Flexible NoSQL database schema.
+- **Socket.IO**: Real-time bidirectional event-based communication.
+- **JWT (JSON Web Tokens)**: Stateless authentication.
 
-## 🛠️ Tech Stack
+### Frontend
 
-- **Frontend**: React (Vite), Tailwind CSS, Redux Toolkit
-- **Backend**: Node.js, Express
-- **Real-Time**: Socket.IO, Redis
-- **Database**: MongoDB
+- **React**: Component-based UI library.
+- **Redux Toolkit**: Efficient state management.
+- **React Router**: Client-side routing.
+- **Axios**: Promise-based HTTP client.
+- **Lucide React**: Beautiful & consistent icons.
 
-## 🚀 Getting Started
+## 📦 Installation
 
-### Prerequisites
+1.  **Clone the repository**
 
-- Node.js (v18+)
-- MongoDB (Running locally or Atlas URI)
+    ```bash
+    git clone https://github.com/RimonDipta/educonnect-platform.git
+    cd educonnect-platform
+    ```
 
-### Quick Start
-
-1.  **Install All Dependencies** (Root, Client, Server)
+2.  **Install Dependencies** (Root, Client, and Server)
 
     ```bash
     npm run install:all
     ```
 
-2.  **Start Development Servers**
+3.  **Environment Setup**
+    - Create a `.env` file in the `server` directory:
+      ```env
+      PORT=5000
+      MONGODB_URI=mongodb://localhost:27017/educonnect
+      JWT_SECRET=your_super_secret_key
+      NODE_ENV=development
+      ```
+
+4.  **Start Application**
     ```bash
     npm start
     ```
 
-    - Frontend: `http://localhost:5173`
-    - Backend: `http://localhost:5000`
+    - Server: `http://localhost:5000`
+    - Client: `http://localhost:5173`
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-This project is configured for collaboration.
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and follow our coding standards.
 
-- **Linting**: Pre-commit hooks are active (Husky).
-- **Code Style**: VS Code extensions recommended.
+Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) in all interactions.
 
----
+## 📄 License
 
-_Maintained by Rimon_
+This project is licensed under the MIT License.

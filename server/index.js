@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 
+const { initializeSocket } = require('./socket/index');
+
 const app = express();
 const server = http.createServer(app);
 
@@ -19,20 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/auth', require('./routes/authRoutes'));
 
 // Socket.IO Setup
-const io = new Server(server, {
-  cors: {
-    origin: '*', // Allow all origins for dev, lock down in prod
-    methods: ['GET', 'POST'],
-  },
-});
-
-io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
-
-  socket.on('disconnect', () => {
-    console.log('User disconnected:', socket.id);
-  });
-});
+const io = initializeSocket(server);
 
 // Database Connection
 const MONGODB_URI =

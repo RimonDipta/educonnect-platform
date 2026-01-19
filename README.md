@@ -4,6 +4,8 @@ EduConnect is a real-time academic collaboration platform designed to bridge the
 
 ## 🚀 Features
 
+For a deep dive into our feature set and specifications, see [ProjectFeat.md](ProjectFeat.md).
+
 - **User Authentication**: Secure registration and login with JWT and bcrypt.
 - **Role-Based Access**: Automatic role assignment (Junior/Senior) based on academic level.
 - **Q&A System**: Post questions, filter by subjects, and get urgent help.

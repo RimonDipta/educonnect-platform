@@ -5,6 +5,9 @@ import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import PrivateRoute from './components/routing/PrivateRoute';
 import PublicRoute from './components/routing/PublicRoute';
+import AskQuestion from './pages/questions/AskQuestion';
+import QuestionList from './pages/questions/QuestionList';
+import QuestionDetail from './pages/questions/QuestionDetail';
 
 // Placeholder Pages
 const Home = () => (
@@ -36,7 +39,38 @@ function App() {
 
         {/* Private Routes (accessible only if authenticated) */}
         <Route element={<PrivateRoute />}>
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/questions"
+            element={
+              <PrivateRoute>
+                <QuestionList />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/questions/ask"
+            element={
+              <PrivateRoute>
+                <AskQuestion />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/questions/:id"
+            element={
+              <PrivateRoute>
+                <QuestionDetail />
+              </PrivateRoute>
+            }
+          />
         </Route>
 
         {/* Fallback */}

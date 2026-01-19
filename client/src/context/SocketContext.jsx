@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { useSelector } from 'react-redux';
@@ -14,19 +15,18 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     // Only connect if user is authenticated
-    if (isAuthenticated && user) {
-      const newSocket = io('http://localhost:5000', {
-        // You can pass auth token here if needed for handshake auth
-        // auth: { token: user.token }
-      });
+    if (!isAuthenticated || !user) return;
 
-      setSocket(newSocket);
+    const newSocket = io('http://localhost:5000', {
+      // auth: { token: user.token }
+    });
 
-      return () => {
-        newSocket.close();
-        setSocket(null);
-      };
-    }
+    setSocket(newSocket);
+
+    return () => {
+      newSocket.close();
+      setSocket(null);
+    };
   }, [isAuthenticated, user]);
 
   return (

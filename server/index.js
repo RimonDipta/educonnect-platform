@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/questions', require('./routes/questionRoutes'));
 
 // Socket.IO Setup
 const io = initializeSocket(server);

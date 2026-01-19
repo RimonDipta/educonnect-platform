@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Register from './pages/auth/Register';
+import Login from './pages/auth/Login';
 
 // Placeholder Pages
 const Home = () => (
@@ -16,9 +17,6 @@ const Home = () => (
   </div>
 );
 
-const Login = () => (
-  <div className="text-center text-2xl">Login Page (Coming Soon)</div>
-);
 const Dashboard = () => (
   <div className="text-center text-2xl">Dashboard (Protected)</div>
 );

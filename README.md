@@ -12,6 +12,8 @@ EduConnect is a real-time academic collaboration platform designed to bridge the
 
 ## 🛠️ Technology Stack
 
+For a detailed breakdown of our architecture and choices, see [Technology.md](Technology.md).
+
 ### Backend
 
 - **Node.js & Express**: High-performance API server.
@@ -52,6 +54,7 @@ EduConnect is a real-time academic collaboration platform designed to bridge the
       ```
 
 4.  **Start Application**
+
     ```bash
     npm start
     ```
